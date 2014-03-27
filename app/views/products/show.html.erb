@@ -1,0 +1,58 @@
+<%= javascript_include_tag 'jquery.raty.js','letsrate.js.erb'%>
+
+<% if flash[:notice] %>
+    <h3> <div id="notice"><%= flash[:notice] %></div>  </h3>
+<% end %>
+
+<div id="productInfoLeftPanel">
+  <div id="topPanel">
+      <h3> <%= @product.title %> </h3>
+      <h5>Starting Price = $<%= @product.price %></h5>
+      <h5>Current Price = $<%= @product.current_price %></h5>
+      <h5>Keywords : <%= @product.keywords %></h5>
+      <h5>Condition : <%= @product.condition %></h5>
+      <h5>Details : <%= @product.detail %></h5>
+      <h5>Auction End Date : <%= @product.deadline %></h5>
+      <% if @product.is_active? %>
+          <h5>Auction Status : OPEN</h5>
+      <% else %>
+          <h5>Auction Status : CLOSED</h5>
+      <% end %>
+      <h4>Seller : <%= @product.user.email %> </h4>
+      <% if @product.owning_user_can_be_rated(current_user) %>
+        <h4 id="inline">Seller Rating : </h4><div id="starsClick"><%= rating_for @product.user, "rating" %></div>
+      <% else %>
+        <h4 id="inline">Seller Rating : </h4><div id="starsNoClick"><%= rating_for @product.user, "rating" %></div>
+      <% end %>
+  </div>
+
+  <div id="bottomPanel">
+      <%= render :partial => 'bids/newBid', :locals => { :bids => @bids } %>
+  </div>
+</div>
+
+<div id="productInfoRightPanel">
+
+  <div id="topPanel">
+      <% if @product.product_picture == nil or @product.product_picture.name=="Default"%>
+          <img id="profilePicture" src="/assets/default.png">
+      <% else %>
+          <img id="profilePicture" src="<%= url_for(:action => 'picture', :id => @product.id) %>" />
+      <% end %>
+  </div>
+
+  <div id="bottomPanel">
+      <% if user_signed_in?%>
+        <% if not current_user.in_watch_list?(@product) %>
+            <%= button_to "Add To Watchlist", add_to_watch_list_path(@product) , :method => "get" %>
+        <% else %>
+            <%= button_to "Remove from Watchlist", remove_from_watch_list_path(@product)%>
+        <% end %>
+      <% end %>
+      <div id="past_bids">
+        <h3>Last 5 Bids</h3>
+        <%= render :partial => 'bids/bidsPanel', :locals => { :bids => @bids } %>
+      </div>
+  </div>
+
+</div>

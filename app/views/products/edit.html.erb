@@ -1,0 +1,54 @@
+<div id="forms">
+  <h1>Update your existing item: </h1>
+  <div id="post_item_form">
+    <%= form_for(@product, html: {multipart: true} ) do |f| %>
+
+        <% if @product.errors.any? %>
+            <div id="error_explanation">
+              <h3><%= pluralize(@product.errors.count, "error") %> prohibited this product from being posted:</h3>
+              <ul>
+                <% @product.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <div id="left_form">
+
+          <%= f.label :title, :disabled => true %>
+          <%= f.text_field :title, :disabled => true  %><br>
+
+          <%= f.label :keywords, :disabled => true  %>
+          <%= f.text_field :keywords, :disabled => true  %><br>
+
+          <%= f.label :condition, :disabled => true  %>
+          <%= f.text_field :condition, :disabled => true  %><br>
+
+          <%= f.label :detail %>
+          <%= f.text_area :detail %><br>
+
+          <%= f.label :price, :disabled => true  %>
+          <%= f.number_field :price, :disabled => true  %><br>
+
+        </div>
+
+        <div id="right_form">
+
+          <%= f.label :deadline, :disabled => true  %>
+          <%= f.datetime_select :deadline, :disabled => true  %><br>
+
+          <%= f.label :uploaded_picture, :disabled => true  %>
+          <%= f.file_field :uploaded_picture, :disabled => true  %><br>
+
+
+          <%= f.submit "Update Item", :class => "post_item_button"  %>
+
+
+        </div>
+
+        </div>
+
+
+    <% end %>
+    </div>

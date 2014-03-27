@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Best Bay</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="watchlistPanel">
+  <div id="search_form">
+    <%= render :partial => 'application/searchForm' %>
+  </div>
+
+  <table class="searchResultTable">
+    <tr>
+      <th></th>
+      <th>Item Name</th>
+      <th>Condition</th>
+      <th>Price</th>
+      <th colspan="2"></th>
+    </tr>
+
+
+    <% @products.each do |product| %>
+        <tr>
+          <td>
+            <% if product.product_picture == nil or product.product_picture.name=="Default"%>
+                <img width="100" height="100"  src="/assets/default.png">
+            <% else %>
+                <img width="100" height="100" src="<%= url_for(:controller => 'products', :action => 'picture', :id => product.id) %>" />
+            <% end %>
+          </td>
+          <td><%= product.title %></td>
+          <td><%= product.condition %></td>
+          <td><%= product.price %></td>
+          <td  class="hoverstate" onclick="location.href='<%= product_path(product) %>'">View</td>
+          <td class="hoverstate" onclick="location.href='<%= remove_from_watch_list_path(product)%>'" >Remove from Watchlist</td>
+        </tr>
+    <% end %>
+  </table>
+  <div id="page_panel">
+    <%= will_paginate @products, :params=>{:search=>params[:search]} %>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Best Bay</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="watchlistPanel">
+
+  <h2>Open Bids</h2>
+  <%= render :partial => 'users/bidsTable', :locals => {:bids => @openBids} %>
+  <div id="page_panel">
+    <%= if @openBids != nil and @openBids != []
+          will_paginate @openBids, :param_name => 'openBids' end %>
+  </div>
+  <h2>Bids Won</h2>
+  <%= render :partial => 'users/bidsTable', :locals => {:bids => @wonBids} %>
+  <div id="page_panel">
+    <%= if @wonBids != nil and @wonBids != []
+          will_paginate @wonBids, :param_name => 'wonBids' end %>
+  </div>
+  <h2>Bids Lost</h2>
+  <%= render :partial => 'users/bidsTable', :locals => {:bids => @lostBids} %>
+  <div id="page_panel">
+    <%= if @lostBids != nil and @lostBids != []
+          will_paginate @lostBids, :param_name => 'lostBids' end %>
+  </div>
+
+</div>
+
+</body>
+</html>

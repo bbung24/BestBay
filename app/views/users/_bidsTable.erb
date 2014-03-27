@@ -1,0 +1,27 @@
+<table class="searchResultTable">
+  <tr>
+    <th></th>
+    <th>Item Name</th>
+    <th>Your Bid</th>
+    <th>Winning Bid</th>
+    <th colspan="1"></th>
+  </tr>
+
+
+  <% bids.each do |bid| %>
+      <% product = bid.product %>
+      <tr>
+        <td>
+          <% if product.product_picture == nil or product.product_picture.name=="Default"%>
+              <img width="100" height="100"  src="/assets/default.png">
+          <% else %>
+              <img width="100" height="100" src="<%= url_for(:controller => 'products', :action => 'picture', :id => product.id) %>" />
+          <% end %>
+        </td>
+        <td><%= product.title %></td>
+        <td><%= bid.price %></td>
+        <td><%= product.current_price %></td>
+        <td  class="hoverstate" onclick="location.href='<%= product_path(product) %>'">View</td>
+      </tr>
+  <% end %>
+</table>

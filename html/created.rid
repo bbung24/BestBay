@@ -1,0 +1,23 @@
+Mon, 21 Oct 2013 19:54:55 -0400
+README.rdoc	Mon, 21 Oct 2013 19:54:42 -0400
+app/controllers/application_controller.rb	Mon, 21 Oct 2013 16:50:47 -0400
+app/controllers/products_controller.rb	Mon, 21 Oct 2013 17:06:59 -0400
+app/controllers/users_controller.rb	Sun, 13 Oct 2013 08:57:31 -0400
+app/helpers/application_helper.rb	Tue, 08 Oct 2013 13:55:05 -0400
+app/models/product.rb	Mon, 21 Oct 2013 17:09:30 -0400
+app/models/product_picture.rb	Fri, 18 Oct 2013 00:57:31 -0400
+app/models/user.rb	Mon, 14 Oct 2013 21:40:44 -0400
+config/application.rb	Fri, 11 Oct 2013 16:02:11 -0400
+config/boot.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/environment.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/environments/development.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/environments/production.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/environments/test.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/initializers/backtrace_silencers.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/initializers/devise.rb	Mon, 14 Oct 2013 11:19:58 -0400
+config/initializers/inflections.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/initializers/mime_types.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/initializers/secret_token.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/initializers/session_store.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/initializers/wrap_parameters.rb	Tue, 08 Oct 2013 13:55:05 -0400
+config/routes.rb	Mon, 21 Oct 2013 16:50:47 -0400

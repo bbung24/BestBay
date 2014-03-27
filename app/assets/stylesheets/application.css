@@ -1,0 +1,418 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.inline {
+    display:inline-block;
+}
+#top h1
+{
+	width: 80%;
+	margin-top: 20px;
+    padding-left: 8%;
+	text-align:center;
+	font-size:40pt;
+	float: left;
+}
+
+.topButtons
+{
+	margin-top: 60px;
+	margin-right: 10px;
+	float: right;
+}
+
+#top
+{
+	width: 100%;
+	height: 187px;
+}
+
+#welcome
+{
+	display: inline;
+}
+
+h2
+{
+	margin-top: 20px;
+	font-size:20pt;
+    text-align:center;
+}
+
+#forms
+{
+	width: 100%;
+    text-align:center;
+}
+
+#navigationTab
+{
+    width: 100%;
+}
+.leftTable
+{
+  margin-bottom:100px;
+}
+
+.leftTable .tabButton
+{
+    width: 100%;
+    height: 30px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.logo
+{
+    width: 100%;
+    height: 30px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#signin_form
+{
+	width: 50%;
+	margin:auto;
+	float: left;
+    text-align:center;
+}
+
+#watchlistPanel{
+    float: left;
+    margin-left: 5%;
+    width: 70%;
+}
+
+#searchPanel{
+    float: left;
+    margin-left: 5%;
+    width: 70%;
+}
+
+#viewPanel{
+    width: 70%;
+    float: left;
+    margin-left: 5%;
+}
+#register_form
+{
+	width: 50%;
+    float: right;
+    margin: auto;
+    text-align:center;
+}
+
+#bid_form
+{
+    width: 50%;
+    float: left;
+    margin: auto;
+    text-align:center;
+}
+
+#search_field
+{
+    width: 80%;
+    horizontal-align: middle;
+    margin:auto;
+}
+
+#search_form{
+    width: 100%;
+    text-align: center;
+    margin:auto;
+}
+
+#page_panel
+{
+    width: 100%;
+    text-align: center;
+    margin:auto;
+}
+
+.searchResultTable{
+    width: 100%;
+    border:2px solid #000000;
+}
+.searchResultTable td{
+    vertical-align:middle;
+    horizontal-align:middle;
+    padding: 10px;
+    border:1px solid #000000;
+    border-width:0px 1px 1px 0px;
+    font-size:17px;
+    font-family:Helvetica;
+    font-weight:normal;
+    color:#000000;
+}
+.searchResultTable th{
+    vertical-align:middle;
+    horizontal-align:middle;
+    padding: 15px;
+    border:2px solid #000000;
+    border-width:0px 1px 1px 0px;
+    font-size:22px;
+    font-family:Helvetica;
+    font-weight:bold;
+    background:#6c8cd5;
+}
+.searchResultTable tr td{
+    border:0px solid #000000;
+    text-align:center;
+    border-width:0px 0px 1px 1px;
+    font-size:17px;
+    font-family:Helvetica;
+    color:#000000;
+}
+
+.searchResultTable td.hoverstate:hover{
+    background:-o-linear-gradient(bottom, #64a8d1 5%, #64a8d1 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #64a8d1), color-stop(1, #64a8d1) );
+    background:-moz-linear-gradient( center top, #64a8d1 5%, #64a8d1 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#64a8d1", endColorstr="#64a8d1");	background: -o-linear-gradient(top,#64a8d1,64a8d1);
+
+    background-color:#64a8d1;
+}
+
+.leftTable {
+    margin:20px;padding:0px;
+    margin-bottom: 250px;
+    width:15%;
+    float: left;
+    border:2px solid #000000;
+
+    -moz-border-radius-bottomleft:13px;
+    -webkit-border-bottom-left-radius:13px;
+    border-bottom-left-radius:13px;
+
+    -moz-border-radius-bottomright:13px;
+    -webkit-border-bottom-right-radius:13px;
+    border-bottom-right-radius:13px;
+
+    -moz-border-radius-topright:13px;
+    -webkit-border-top-right-radius:13px;
+    border-top-right-radius:13px;
+
+    -moz-border-radius-topleft:13px;
+    -webkit-border-top-left-radius:13px;
+    border-top-left-radius:13px;
+}.leftTable table{
+     width:100%;
+     height:100%;
+     margin:0px;padding:0px;
+ }.leftTable tr:last-child td:last-child {
+      -moz-border-radius-bottomright:13px;
+      -webkit-border-bottom-right-radius:13px;
+      border-bottom-right-radius:13px;
+  }
+.leftTable table tr:first-child td:first-child {
+    -moz-border-radius-topleft:13px;
+    -webkit-border-top-left-radius:13px;
+    border-top-left-radius:13px;
+}
+.leftTable table tr:first-child td:last-child {
+    -moz-border-radius-topright:13px;
+    -webkit-border-top-right-radius:13px;
+    border-top-right-radius:13px;
+}.leftTable tr:last-child td:first-child{
+     -moz-border-radius-bottomleft:13px;
+     -webkit-border-bottom-left-radius:13px;
+     border-bottom-left-radius:13px;
+ }.leftTable tr:hover td{
+      background-color:#64a8d1;
+  }
+
+.leftTable td{
+    vertical-align:middle;
+    horizontal-align:middle;
+    padding: 15px;
+    border:1px solid #000000;
+    border-width:0px 1px 1px 0px;
+    font-size:17px;
+    font-family:Helvetica;
+    font-weight:normal;
+    color:#000000;
+}
+.leftTable tr td{
+    border:0px solid #000000;
+    text-align:center;
+    border-width:0px 0px 1px 1px;
+    font-size:19px;
+    font-family:Helvetica;
+    color:#000000;
+}
+.leftTable tr.hoverstate:hover td{
+    background:-o-linear-gradient(bottom, #64a8d1 5%, #64a8d1 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #64a8d1), color-stop(1, #64a8d1) );
+    background:-moz-linear-gradient( center top, #64a8d1 5%, #64a8d1 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#64a8d1", endColorstr="#64a8d1");	background: -o-linear-gradient(top,#64a8d1,64a8d1);
+
+    background-color:#64a8d1;
+}
+
+.leftTable tr.title td{
+    font-size:22px;
+    font-weight:bold;
+    background-color:#6c8cd5;
+}
+
+.leftTable tr.empty td{
+    background-color:#6c8cd5;
+}
+
+.leftTable tr:first-child td:first-child{
+    border-width:0px 0px 1px 0px;
+}
+.leftTable tr:first-child td:last-child{
+    border-width:0px 0px 1px 1px;
+}
+
+#profilePicture{
+    width: 60%;
+}
+
+#productInfoRightPanel{
+    width: 40%;
+    height: 100%;
+    float: right;
+    text-align: center;
+
+}
+
+#productInfoLeftPanel{
+    width: 40%;
+    float: left;
+    text-align: center;
+}
+
+#topPanel{
+    float: top;
+}
+
+#bottomPanel{
+    padding-top: 20px;
+    float: bottom;
+}
+
+#bid_form {
+    float: top;
+    margin: auto;
+    padding-left: 25%;
+}
+
+#past_bids {
+    float: bottom;
+}
+
+
+.bidsTable{
+    width: 60%;
+    border:2px solid #000000;
+    margin: auto;
+}
+.bidsTable td{
+    vertical-align:middle;
+    horizontal-align:middle;
+    padding: 10px;
+    border:1px solid #000000;
+    border-width:0px 1px 1px 0px;
+    font-size:17px;
+    font-family:Helvetica;
+    font-weight:normal;
+    color:#000000;
+}
+.bidsTable th{
+    vertical-align:middle;
+    horizontal-align:middle;
+    padding: 15px;
+    border:2px solid #000000;
+    border-width:0px 1px 1px 0px;
+    font-size:22px;
+    font-family:Helvetica;
+    font-weight:bold;
+    background:#6c8cd5;
+}
+.bidsTable tr td{
+    border:0px solid #000000;
+    text-align:center;
+    border-width:0px 0px 1px 1px;
+    font-size:17px;
+    font-family:Helvetica;
+    color:#000000;
+}
+
+#starsNoClick{
+    pointer-events:none;
+    display: inline-block;
+}
+
+#starsClick{
+    display: inline-block;
+}
+
+#inline{
+    display: inline;
+}
+
+#post_item_form{
+    text-align: left;
+    display: inline;
+}
+
+#post_item_form #product_detail{
+    text-align: left;
+    height: 60px;
+    display: inline;
+}
+
+#post_item_form #product_deadline_1i{
+    width: 65px;
+}
+
+#post_item_form #product_deadline_2i{
+    width: 105px;
+}
+
+#post_item_form #product_deadline_3i{
+    width: 50px;
+}
+
+#post_item_form #product_deadline_4i{
+    width: 50px;
+}
+
+#post_item_form #product_deadline_5i{
+    width: 50px;
+}
+
+#left_form{
+    margin-top: 20px;
+    float: left;
+    width: 20%;
+    margin-left: 40px;
+}
+
+#right_form{
+    margin-top: 20px;
+    float: right;
+    width: 50%;
+}
+
+#logo{
+    float: left;
+    width: 80%;
+}
+
+.post_item_button {
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 20px;
+    font-size: 20pt;
+}

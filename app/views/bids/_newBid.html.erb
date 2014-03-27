@@ -1,0 +1,22 @@
+<div id="bid_form">
+    <h1>Bid</h1>
+    <%= form_for @bid, :url => {:controller => :bids, :action => :create, :product => @product} do |f| %>
+
+        <% if @bid.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@bid.errors.count, "error") %> Bid not successful:</h2>
+              <ul>
+                <% @bid.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <%= f.label :price %><br>
+        <%= f.number_field :price, :value => @product.current_price %><br>
+
+        <%= f.submit "Bid" %>
+
+    <% end %>
+</div>

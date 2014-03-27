@@ -1,0 +1,61 @@
+<div id="searchPanel">
+
+  <% if search == true %>
+  <div id="search_form">
+    <%= render :partial => 'application/searchForm' %>
+  </div>
+  <% end %>
+
+
+  <table class="searchResultTable">
+    <tr>
+      <th></th>
+      <th>Item Name</th>
+      <th>Condition</th>
+      <th>Current Price</th>
+      <% if user_signed_in? %>
+          <th colspan="4"></th>
+      <% else %>
+          <th></th>
+      <% end %>
+    </tr>
+
+
+    <% products.each do |product| %>
+        <tr>
+          <td>
+            <% if product.product_picture == nil or product.product_picture.name=="Default"%>
+                <img width="100" height="100"  src="/assets/default.png">
+            <% else %>
+                <img width="100" height="100" src="<%= url_for(:controller => 'products', :action => 'picture', :id => product.id) %>" />
+            <% end %>
+          </td>
+          <td><%= product.title %></td>
+          <td><%= product.condition %></td>
+          <td><%= product.current_price %></td>
+          <td  class="hoverstate" onclick="location.href='<%= product_path(product) %>'">View</td>
+          <% if user_signed_in? %>
+              <% if current_user.in_watch_list?(product) %>
+                  <td>Added to Watchlist</td>
+              <% else %>
+                <td class="hoverstate" onclick="location.href='<%= add_to_watch_list_path(product)%>'">Add to Watchlist</td>
+              <% end %>
+              <% if product.user == current_user && product.is_active? %>
+                  <td  class="hoverstate" onclick="location.href='<%= edit_product_path(product) %>'">Update</td>
+                  <% if product.is_removable?%>
+                    <td class="hoverstate"><%=link_to "Retract", product, method: :delete%></td>
+                  <% else %>
+                    <td></td>
+                  <% end %>
+              <% else %>
+                  <td colspan="2"></td>
+              <% end %>
+          <% end %>
+
+        </tr>
+    <% end %>
+  </table>
+  <div id="page_panel">
+    <%= will_paginate products, :params=>{:search=>params[:search]} %>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Xtremers</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="top">
+
+  <div id="logo">
+    <img src="/assets/logo.png">
+  </div>
+
+  <% if user_signed_in? %>
+      <%= button_to "Sign Out", destroy_user_session_path, :method => "delete",:class => "topButtons" %>
+      <%= button_to "HomePage", root_path, :method => "get",:class => "topButtons" %>
+  <% else %>
+      <%= button_to "Sign In", new_user_session_path, :method => "get",:class => "topButtons" %>
+      <%= button_to "Register", new_user_registration_path, :method => "get",:class => "topButtons" %>
+      <%= button_to "HomePage", root_path, :method => "get",:class => "topButtons" %>
+  <% end %>
+</div>
+
+<div class="left">
+
+    <%= render :partial => 'application/navigationPanel' %>
+
+</div>
+
+<div class="right">
+
+    <%= yield %>
+
+</div>
+
+
+</body>
+</html>

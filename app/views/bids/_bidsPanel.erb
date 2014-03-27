@@ -1,0 +1,17 @@
+<div id="bidsPanel">
+  <table class="bidsTable">
+    <% if bids != nil %>
+        <tr>
+            <th>Price</th>
+            <th>User</th>
+        </tr>
+        <% bids.last(5).each do |bid| %>
+            <tr>
+            <td><%= bid.price %></td>
+            <td><%= bid.user_first_name %> <%= bid.user_last_name %></td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+</div>
+

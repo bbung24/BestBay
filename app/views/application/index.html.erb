@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Best Bay</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <div id ="welcome">
+      <% if user_signed_in? and  @active_products == nil %>
+        <h2> Welcome back <%=current_user.email%>! </h2>
+      <% end %>
+    </div>
+
+    <% if @products != nil %>
+      <%= render :partial => 'application/searchPanel', :locals => { :products => @products, :search => true }  %>
+    <% end %>
+    <div class="productsPanel">
+      <div id="active_products_panel">
+        <% if @active_products != nil %>
+            <h2>Active Products</h2>
+              <%= render :partial => 'application/searchPanel', :locals => { :products => @active_products, :search => false }  %>
+        <% end %>
+      </div>
+      <div id="closed_products_panel">
+        <% if @closed_products != nil %>
+              <h2>Closed Products</h2>
+              <%= render :partial => 'application/searchPanel', :locals => { :products => @closed_products, :search => false }  %>
+        <% end %>
+      </div>
+    </div>
+
+
+</body>
+</html>

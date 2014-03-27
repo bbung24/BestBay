@@ -1,0 +1,5 @@
+FactoryGirl.create(:bad_keyword, keyword: "drug")
+FactoryGirl.create(:bad_keyword, keyword: "weapon")
+FactoryGirl.create(:bad_keyword, keyword: "gun")
+FactoryGirl.create(:bad_keyword, keyword: "pistol")
+FactoryGirl.create(:bad_keyword, keyword: "bad")
